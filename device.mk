@@ -156,11 +156,39 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/iot_devlist.conf:system/etc/bluetooth/iot_devlist.conf
+	
+# MOD
+PRODUCT_PACKAGES += \
+	libcameraservice_mod \
+	libandroid_runtime_mod \
+	framework_mod \
+	services_mod \
+	init.environ.rc_hook
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
-    libcamera_shim
+	Snap \
+	OnePlusCamera \
+	OnePlusGallery \
+	libcamera_shim
+	
+# Camera Libs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/camera/lib/arm64-v8a/libopbaselib.so:system/vendor/lib64/libopbaselib.so \
+    $(LOCAL_PATH)/camera/lib/arm64-v8a/libopcamera.so:system/vendor/lib64/libopcamera.so \
+    $(LOCAL_PATH)/camera/lib/arm64-v8a/libopcameralib.so:system/vendor/lib64/libopcameralib.so \
+    $(LOCAL_PATH)/camera/lib/arm64-v8a/libfilterpack_facedetect.so:system/vendor/lib64/libfilterpack_facedetect.so \
+	$(LOCAL_PATH)/camera/lib/arm64-v8a/libfilterpack_imageproc.so:system/vendor/lib64/libfilterpack_imageproc.so \
+	$(LOCAL_PATH)/camera/lib/arm64-v8a/libfilterfw.so:system/vendor/lib64/libfilterfw.so \
+	$(LOCAL_PATH)/camera/lib/arm64-v8a/libfilter-sdk.so:system/vendor/lib64/libfilter-sdk.so \
+    $(LOCAL_PATH)/camera/lib/armeabi-v7a/libopbaselib.so:system/vendor/lib/libopbaselib.so \
+    $(LOCAL_PATH)/camera/lib/armeabi-v7a/libopcamera.so:system/vendor/lib/libopcamera.so \
+    $(LOCAL_PATH)/camera/lib/armeabi-v7a/libopcamera_crypt.so:system/vendor/lib/libopcamera_crypt.so \
+    $(LOCAL_PATH)/camera/lib/armeabi-v7a/libopcamera_native_modules.so:system/vendor/lib/libopcamera_native_modules.so  \
+    $(LOCAL_PATH)/camera/lib/armeabi-v7a/libopcameralib.so:system/vendor/lib/libopcameralib.so \
+    $(LOCAL_PATH)/camera/lib/armeabi-v7a/libopcamera_native_modules.so:system/vendor/lib/libopcamera_native_modules.so  \
+	$(LOCAL_PATH)/camera/lib/armeabi-v7a/libfilterpack_imageproc.so:system/vendor/lib/libfilterpack_imageproc.so  \
+	$(LOCAL_PATH)/camera/lib/armeabi-v7a/libfilter-sdk.so:system/vendor/lib/libfilter-sdk.so
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -190,7 +218,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd \
-    OneplusPocketMode
+#    OneplusPocketMode
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
