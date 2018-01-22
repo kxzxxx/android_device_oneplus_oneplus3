@@ -108,10 +108,12 @@ PRODUCT_PACKAGES += \
 
 # TODO Alipay / WeChat
 PRODUCT_PACKAGES += \
-    org.ifaa.android.manager
+    org.ifaa.android.manager \
+    soter
 
 PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
+    org.ifaa.android.manager \
+    soter
 
 # audio
 PRODUCT_PACKAGES += \
